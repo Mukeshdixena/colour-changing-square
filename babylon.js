@@ -99,9 +99,9 @@ function colour(square, scene) {
             var randomColor = new BABYLON.Color3(Math.random(), Math.random(), Math.random());
             materials[i].diffuseColor = randomColor;
 
-            setTimeout(function () {
-                scene.render();
-            }, 100);
+            // setTimeout(function () {
+            //     scene.render();
+            // }, 100);
         }
     });
 }
