@@ -13,21 +13,21 @@ const createScene = function () {
 
     camera.attachControl(canvas, true);
 
-    var square = BABYLON.MeshBuilder.CreatePlane("square", { size: 20 }, scene);
-    colour(square, scene);
+    // var square = BABYLON.MeshBuilder.CreatePlane("square", { size: 20 }, scene);
+    // colour(square, scene);
 
-    // var gridSize = 2;
-    // var squareSize = 1;
-    // var gridSpacing = 0.1;
+    var gridSize = 10;
+    var squareSize = 1;
+    var gridSpacing = 0.1;
 
-    // for (var i = 0; i < gridSize; i++) {
-    //     for (var j = 0; j < gridSize; j++) {
-    //         var square = BABYLON.MeshBuilder.CreatePlane("square", { size: squareSize }, scene);
-    //         square.position.x = (i - gridSize / 2) * (squareSize + gridSpacing);
-    //         square.position.y = (j - gridSize / 2) * (squareSize + gridSpacing);
-    //         colour(square, scene);
-    //     }
-    // }
+    for (var i = 0; i < gridSize; i++) {
+        for (var j = 0; j < gridSize; j++) {
+            var square = BABYLON.MeshBuilder.CreatePlane("square", { size: squareSize }, scene);
+            square.position.x = (i - gridSize / 2) * (squareSize + gridSpacing);
+            square.position.y = (j - gridSize / 2) * (squareSize + gridSpacing);
+            colour(square, scene);
+        }
+    }
 
     return scene;
 }
